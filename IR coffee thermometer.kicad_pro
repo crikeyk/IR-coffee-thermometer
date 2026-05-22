@@ -615,7 +615,7 @@
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
       "field_names": [],
-      "hop_over_size_choice": 0,
+      "hop_over_size_choice": 2,
       "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "",
       "intersheets_ref_short": false,
@@ -648,7 +648,7 @@
         "uuid": "ed3d3bab-d20d-43f1-a48e-4bf555c47039"
       }
     ],
-    "used_designators": "AE1,#PWR1-24,#PWR54-57,C1-16,FB1,R1-9,R15-17,R32-34,J2,U1-3,X1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
