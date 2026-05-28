@@ -153,6 +153,677 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "0_MyLib:NMOS, 2 Channel, HJ8205"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at -11.684 7.366 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HJ8205"
+				(at 8.636 7.874 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "PCM_JLCPCB:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+				(at 1.016 -6.096 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401111808_hongjiacheng-HJ8205_C20069150.pdf"
+				(at -2.286 -4.699 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "20V 4.3A 1.25W 0.3Ω@4.0V,4.3A 1V 1PCSNChannel SOT-23-6L MOSFETs ROHS"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C20069150"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Stock" "10725"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" "0.053USD"
+				(at 0.762 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Process" "SMT"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Minimum Qty" "5"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Attrition Qty" "4"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Class" "Preferred Component"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Category" "Triode/MOS Tube/Transistor,MOSFETs"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "hongjiacheng"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Part" "HJ8205"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "C20069150"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NMOS, 2 Channel, HJ8205_0_1"
+				(rectangle
+					(start -12.7 6.35)
+					(end 10.16 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.9544 -1.2555) (xy -6.4144 -1.2555) (xy -6.4144 0.5225)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.89 -1.27) (xy -10.16 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.1924 0.5225) (xy -8.1924 -2.0175) (xy -4.6364 -2.0175) (xy -4.6364 0.5225)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -8.1924 -1.2555)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.6844 0.5225) (xy -8.7004 0.5225)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.4144 1.0305) (xy -6.4144 3.8245)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.4144 0.2685) (xy -6.0334 -0.7475) (xy -6.7954 -0.7475) (xy -6.4144 0.2685)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center -6.4144 -0.3665)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.0334 -2.0175) (xy -6.6684 -1.6365) (xy -6.6684 -2.3985) (xy -6.0334 -2.0175)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.9064 0.5225) (xy -6.9224 0.5225)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.9064 -1.5095) (xy -6.0334 -1.6365) (xy -6.0334 -2.3985) (xy -6.1604 -2.5255)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -4.6364 -1.2555)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.5094 1.0305) (xy -8.3194 1.0305)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.1284 0.5225) (xy -5.1444 0.5225)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.8744 -1.2555) (xy -4.6364 -1.2555)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy -3.81 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 2.032 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 0.508) (xy 2.54 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 1.016) (xy 5.715 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -1.27)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.508) (xy 4.318 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -1.524) (xy 3.429 -1.651) (xy 3.429 -2.413) (xy 3.556 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.429 -2.032) (xy 4.064 -1.651) (xy 4.064 -2.413) (xy 3.429 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.016) (xy 3.81 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0.254) (xy 3.429 -0.762) (xy 4.191 -0.762) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 3.81 -0.381)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0.508) (xy 6.096 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.588 0.508) (xy 5.588 -2.032) (xy 2.032 -2.032) (xy 2.032 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.588 -1.27)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 -1.27) (xy 7.62 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 -1.27) (xy 3.81 -1.27) (xy 3.81 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -15.24 -1.27 0)
+					(length 2.54)
+					(name "S1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 8.89 270)
+					(length 2.54)
+					(name "D1/D2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 -1.27 180)
+					(length 2.54)
+					(name "S2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 8.89 270)
+					(length 2.54)
+					(name "G2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -2.54 8.89 270)
+					(length 2.54)
+					(name "D1/D2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -6.35 8.89 270)
+					(length 2.54)
+					(name "G1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Battery_Management:DW01A"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -8836,322 +9507,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_JLCPCB-Transistor-Packages:NMOS, 2 Channel, HJ8205"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "HJ8205"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "PCM_JLCPCB:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
-				(at 0 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401111808_hongjiacheng-HJ8205_C20069150.pdf"
-				(at -2.286 0.127 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "20V 4.3A 1.25W 0.3Ω@4.0V,4.3A 1V 1PCSNChannel SOT-23-6L MOSFETs ROHS"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "LCSC" "C20069150"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Stock" "10725"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Price" "0.053USD"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Process" "SMT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Minimum Qty" "5"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Attrition Qty" "4"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Class" "Preferred Component"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Category" "Triode/MOS Tube/Transistor,MOSFETs"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "hongjiacheng"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Part" "HJ8205"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "C20069150"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "NMOS, 2 Channel, HJ8205_0_1"
-				(rectangle
-					(start -10.16 5.08)
-					(end 10.16 -5.08)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -8.89 3.81)
-					(radius 0.381)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 2.54 0)
-					(length 2.54)
-					(name "S1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 0 0)
-					(length 2.54)
-					(name "D1/D2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 -2.54 0)
-					(length 2.54)
-					(name "S2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 -2.54 180)
-					(length 2.54)
-					(name "G2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 0 180)
-					(length 2.54)
-					(name "D1/D2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 2.54 180)
-					(length 2.54)
-					(name "G1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "PCM_JLCPCB-Transistors:PMOS,HL2305"
 			(pin_names
 				(offset 0)
@@ -10256,6 +10611,16 @@
 		)
 		(uuid "6376428c-ff97-4e7c-8e10-7aab14901113")
 	)
+	(text "To PWR switch\n"
+		(exclude_from_sim no)
+		(at 179.578 38.608 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "774265a5-a57f-4cba-bdc4-9b23232a7000")
+	)
 	(text "100mA CC\n"
 		(exclude_from_sim no)
 		(at 108.966 37.846 0)
@@ -10316,6 +10681,16 @@
 		)
 		(uuid "ce8eadb5-2152-43ad-aa0a-8fe27ce6e142")
 	)
+	(text "Batt term"
+		(exclude_from_sim no)
+		(at 22.606 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "dfb23149-5b38-4357-ba71-8b0bfabdfc9f")
+	)
 	(text "Battery protection\n"
 		(exclude_from_sim no)
 		(at 25.654 21.59 0)
@@ -10365,16 +10740,10 @@
 		(uuid "0ddf44e9-c5c2-4c1c-af3f-682aa51e17a3")
 	)
 	(junction
-		(at 30.48 67.31)
+		(at 35.56 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1017f8e2-4d63-4c78-8585-ed42df3c2721")
-	)
-	(junction
-		(at 35.56 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "15b8b41f-ff65-4cd6-853b-7d80106f6b4c")
+		(uuid "19a0bb2d-f889-41ec-860e-1f9c49899654")
 	)
 	(junction
 		(at 104.14 125.73)
@@ -10407,10 +10776,22 @@
 		(uuid "339e32dc-611c-446b-9a14-02656ca843b3")
 	)
 	(junction
+		(at 35.56 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3bb2180c-722f-48a6-86dd-e384e42a7fb5")
+	)
+	(junction
 		(at 139.7 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d14734c-1ff1-40d5-bd72-91ed70c8b785")
+	)
+	(junction
+		(at 30.48 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "443ebf01-a1e5-463e-ae7f-5231b1a5289b")
 	)
 	(junction
 		(at 215.9 45.72)
@@ -10429,12 +10810,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "52526bef-3193-4411-82dd-208a9710b656")
-	)
-	(junction
-		(at 35.56 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5b139957-7927-42cf-9593-a047e6e3dc4e")
 	)
 	(junction
 		(at 191.77 123.19)
@@ -10479,10 +10854,22 @@
 		(uuid "83306f63-e261-4a65-bc77-0b661c4d68b2")
 	)
 	(junction
+		(at 83.82 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89bfca32-b409-436c-99f0-6c576bfa397e")
+	)
+	(junction
 		(at 149.86 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8cbe7c9c-e84d-4c5f-9bcd-40e9080a5b96")
+	)
+	(junction
+		(at 77.47 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8cf153f9-c4b9-452e-ac70-d8935c3c6699")
 	)
 	(junction
 		(at 156.21 34.29)
@@ -10503,10 +10890,22 @@
 		(uuid "a66bc5f1-5db5-43e2-8970-ab3ea43c96d3")
 	)
 	(junction
+		(at 35.56 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a933cec8-d15e-44a8-93f3-df14b275c2df")
+	)
+	(junction
 		(at 233.68 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae62eafc-8622-4050-b09b-a80b181d6570")
+	)
+	(junction
+		(at 83.82 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b40a11da-9c67-455a-ad64-3d62f801c640")
 	)
 	(junction
 		(at 127 55.88)
@@ -10539,10 +10938,10 @@
 		(uuid "e488b640-05ff-426f-81f1-fed11cf963ff")
 	)
 	(junction
-		(at 35.56 26.67)
+		(at 87.63 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e5a5d375-108e-43b8-8a77-cc5c413a62e1")
+		(uuid "f3fbfb43-8b9f-4a17-893d-6ef46a5c4931")
 	)
 	(junction
 		(at 271.78 45.72)
@@ -10550,25 +10949,19 @@
 		(color 0 0 0 0)
 		(uuid "f60d941b-9ba6-414c-bb42-011eb2515920")
 	)
-	(wire
-		(pts
-			(xy 52.07 81.28) (xy 52.07 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "01516c64-f597-483e-bd48-9bd856960635")
+	(no_connect
+		(at 198.12 107.95)
+		(uuid "89628736-f75e-468c-bc30-017824b32743")
 	)
 	(wire
 		(pts
-			(xy 30.48 67.31) (xy 35.56 67.31)
+			(xy 83.82 147.32) (xy 83.82 148.59)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "033c0190-2c40-42e8-9258-2ea468df9fe3")
+		(uuid "01ef1805-6d1b-47bf-8b61-ef941d9441a3")
 	)
 	(wire
 		(pts
@@ -10642,6 +11035,16 @@
 	)
 	(wire
 		(pts
+			(xy 40.64 66.04) (xy 35.56 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a6fb82c-50f9-4b63-b170-5c4ca2a2bb67")
+	)
+	(wire
+		(pts
 			(xy 64.77 115.57) (xy 67.31 115.57)
 		)
 		(stroke
@@ -10682,6 +11085,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 66.04) (xy 35.56 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10782039-d73e-454f-8468-fdd65165b535")
+	)
+	(wire
+		(pts
 			(xy 104.14 163.83) (xy 90.17 163.83)
 		)
 		(stroke
@@ -10712,7 +11125,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 67.31) (xy 30.48 69.85)
+			(xy 30.48 55.88) (xy 30.48 66.04)
 		)
 		(stroke
 			(width 0)
@@ -10742,13 +11155,13 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 49.53) (xy 52.07 52.07)
+			(xy 153.67 83.82) (xy 153.67 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b0f686e-7c5f-4735-b75b-307baa82ab23")
+		(uuid "1b83f042-f81e-4582-a512-b925384c0a4e")
 	)
 	(wire
 		(pts
@@ -10759,6 +11172,16 @@
 			(type default)
 		)
 		(uuid "2003e927-ff14-4b2a-a611-d415bb24d96d")
+	)
+	(wire
+		(pts
+			(xy 69.85 66.04) (xy 69.85 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20138433-baf7-4904-b288-80f47824b174")
 	)
 	(wire
 		(pts
@@ -10852,16 +11275,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 45.72) (xy 35.56 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "302065aa-92f0-4ce4-a327-6a3ce298d9ee")
-	)
-	(wire
-		(pts
 			(xy 242.57 86.36) (xy 242.57 83.82)
 		)
 		(stroke
@@ -10869,6 +11282,16 @@
 			(type default)
 		)
 		(uuid "304447c8-5adb-4f2c-8691-0199286af27d")
+	)
+	(wire
+		(pts
+			(xy 30.48 66.04) (xy 35.56 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31dce81a-1bdf-44eb-8a15-e91d27b2683f")
 	)
 	(wire
 		(pts
@@ -10889,16 +11312,6 @@
 			(type default)
 		)
 		(uuid "34795a99-85ef-48f7-8dd4-6cd7003dfec4")
-	)
-	(wire
-		(pts
-			(xy 57.15 49.53) (xy 57.15 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34875d64-9214-418d-b4fe-b8dd7e188923")
 	)
 	(wire
 		(pts
@@ -10962,6 +11375,26 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 49.53) (xy 52.07 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bbaec04-661f-417f-a744-c27d78e82aca")
+	)
+	(wire
+		(pts
+			(xy 55.88 55.88) (xy 55.88 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ed3b42c-1872-48b8-ba68-080b90b45df2")
+	)
+	(wire
+		(pts
 			(xy 114.3 118.11) (xy 119.38 118.11)
 		)
 		(stroke
@@ -11022,16 +11455,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 50.8) (xy 46.99 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43a978e2-5004-4cd0-a2b9-8482e594e68c")
-	)
-	(wire
-		(pts
 			(xy 147.32 109.22) (xy 147.32 113.03)
 		)
 		(stroke
@@ -11062,7 +11485,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 26.67) (xy 31.75 26.67)
+			(xy 35.56 26.67) (xy 30.48 26.67)
 		)
 		(stroke
 			(width 0)
@@ -11112,6 +11535,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 153.67) (xy 77.47 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52ea5ba1-b700-4bce-b0ee-45633d64958b")
+	)
+	(wire
+		(pts
 			(xy 213.36 45.72) (xy 215.9 45.72)
 		)
 		(stroke
@@ -11122,7 +11555,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 26.67) (xy 31.75 64.77)
+			(xy 30.48 26.67) (xy 30.48 53.34)
 		)
 		(stroke
 			(width 0)
@@ -11212,6 +11645,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 147.32) (xy 87.63 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cc75e09-5f0f-4dd5-b37b-a1b046323c07")
+	)
+	(wire
+		(pts
 			(xy 88.9 46.99) (xy 88.9 50.8)
 		)
 		(stroke
@@ -11289,6 +11732,16 @@
 			(type default)
 		)
 		(uuid "6147fada-bd8a-439d-97a2-34c4b8b0db82")
+	)
+	(wire
+		(pts
+			(xy 161.29 83.82) (xy 161.29 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63087ce1-f1bd-4d42-97ad-aac6b5d3f670")
 	)
 	(wire
 		(pts
@@ -11372,6 +11825,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 53.34) (xy 49.53 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d7e0603-5538-4028-8911-aea127ba9c0f")
+	)
+	(wire
+		(pts
 			(xy 115.57 168.91) (xy 104.14 168.91)
 		)
 		(stroke
@@ -11382,6 +11845,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 148.59) (xy 109.22 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e3ac53a-0aba-4124-b5a9-f116d0af1357")
+	)
+	(wire
+		(pts
 			(xy 99.06 167.64) (xy 96.52 167.64)
 		)
 		(stroke
@@ -11389,16 +11862,6 @@
 			(type default)
 		)
 		(uuid "70635bdf-f2a8-4091-b1da-49cfab770261")
-	)
-	(wire
-		(pts
-			(xy 46.99 50.8) (xy 46.99 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7079830a-f92e-4fe7-a459-2f15ba5d1233")
 	)
 	(wire
 		(pts
@@ -11432,6 +11895,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 53.34) (xy 59.69 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74384501-ddde-439b-bb28-e15869dbb070")
+	)
+	(wire
+		(pts
 			(xy 41.91 39.37) (xy 41.91 36.83)
 		)
 		(stroke
@@ -11449,6 +11922,16 @@
 			(type default)
 		)
 		(uuid "7490b23f-b840-45fc-9137-120fb9b81573")
+	)
+	(wire
+		(pts
+			(xy 83.82 148.59) (xy 107.95 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "755da25b-e1e1-43b8-a42f-a91be8a7761f")
 	)
 	(wire
 		(pts
@@ -11499,6 +11982,36 @@
 			(type default)
 		)
 		(uuid "7ad39b32-3f1d-41b6-839f-ad1ab1dff002")
+	)
+	(wire
+		(pts
+			(xy 80.01 144.78) (xy 80.01 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c3cd59f-5bea-468a-a599-2f562cd2efc5")
+	)
+	(wire
+		(pts
+			(xy 74.93 153.67) (xy 77.47 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d749925-b32a-4097-a2de-8b599a0142f6")
+	)
+	(wire
+		(pts
+			(xy 57.15 53.34) (xy 59.69 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d978413-cbdd-4f1c-895e-ed12cde9c096")
 	)
 	(wire
 		(pts
@@ -11592,7 +12105,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 67.31) (xy 30.48 67.31)
+			(xy 27.94 55.88) (xy 30.48 55.88)
 		)
 		(stroke
 			(width 0)
@@ -11609,6 +12122,16 @@
 			(type default)
 		)
 		(uuid "89e66f00-8ba4-43b8-8639-2998a5879270")
+	)
+	(wire
+		(pts
+			(xy 68.58 66.04) (xy 69.85 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bfa39db-deba-444d-9631-b805746aedd7")
 	)
 	(wire
 		(pts
@@ -11672,6 +12195,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 148.59) (xy 83.82 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93203a78-4320-4b16-b219-309752861162")
+	)
+	(wire
+		(pts
 			(xy 166.37 39.37) (xy 166.37 45.72)
 		)
 		(stroke
@@ -11692,16 +12225,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 78.74) (xy 54.61 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "962df70b-3ab4-4457-8dd7-4fddb4c363f0")
-	)
-	(wire
-		(pts
 			(xy 58.42 130.81) (xy 91.44 130.81)
 		)
 		(stroke
@@ -11709,6 +12232,16 @@
 			(type default)
 		)
 		(uuid "9957c502-24e0-48fa-b48c-167f778d76fe")
+	)
+	(wire
+		(pts
+			(xy 87.63 151.13) (xy 74.93 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99c48abe-f24e-4f91-a052-549f7f48291a")
 	)
 	(wire
 		(pts
@@ -11732,6 +12265,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 151.13) (xy 87.63 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b5fb482-62b4-4dc2-a355-402422c715ec")
+	)
+	(wire
+		(pts
 			(xy 78.74 120.65) (xy 90.17 120.65)
 		)
 		(stroke
@@ -11739,6 +12282,16 @@
 			(type default)
 		)
 		(uuid "9d3134d0-f2a6-47b6-a614-77cdd2055c34")
+	)
+	(wire
+		(pts
+			(xy 157.48 83.82) (xy 157.48 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa4dd29-b2ed-4c2e-b675-214f5dab8a4c")
 	)
 	(wire
 		(pts
@@ -11802,7 +12355,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 64.77) (xy 29.21 64.77)
+			(xy 30.48 53.34) (xy 27.94 53.34)
 		)
 		(stroke
 			(width 0)
@@ -11849,6 +12402,16 @@
 			(type default)
 		)
 		(uuid "ae2e477e-e85e-410a-83c4-c6a191018735")
+	)
+	(wire
+		(pts
+			(xy 30.48 66.04) (xy 30.48 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae4c7a32-d838-4d05-a4e2-a7ea179ec562")
 	)
 	(polyline
 		(pts
@@ -11982,6 +12545,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 54.61) (xy 53.34 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c365c3e6-3020-4afa-9247-db059ccf7bbc")
+	)
+	(wire
+		(pts
 			(xy 139.7 109.22) (xy 147.32 109.22)
 		)
 		(stroke
@@ -12012,6 +12585,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 147.32) (xy 77.47 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5f786d8-a5f6-4ef9-b0a1-19029afdf35e")
+	)
+	(wire
+		(pts
 			(xy 71.12 170.18) (xy 71.12 171.45)
 		)
 		(stroke
@@ -12029,6 +12612,16 @@
 			(type default)
 		)
 		(uuid "cb982b09-5323-4e04-91d5-e5a91dd6c35d")
+	)
+	(wire
+		(pts
+			(xy 55.88 54.61) (xy 53.34 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc6b8239-8fad-42be-9ce3-0ad9f1c3f965")
 	)
 	(wire
 		(pts
@@ -12062,16 +12655,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 52.07) (xy 54.61 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf9cb3d9-e977-48e3-89ec-06964e4f7afd")
-	)
-	(wire
-		(pts
 			(xy 41.91 45.72) (xy 35.56 45.72)
 		)
 		(stroke
@@ -12102,13 +12685,13 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 78.74) (xy 54.61 77.47)
+			(xy 83.82 139.7) (xy 87.63 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d42171cf-26ce-4d2d-872c-b01e0b6a508f")
+		(uuid "d5b24ec1-1420-4ddc-bf49-1e1f07bd94a0")
 	)
 	(wire
 		(pts
@@ -12202,6 +12785,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 53.34) (xy 49.53 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dff438ce-cf1c-4146-8eef-2c07958bc83c")
+	)
+	(wire
+		(pts
 			(xy 166.37 45.72) (xy 177.8 45.72)
 		)
 		(stroke
@@ -12219,6 +12812,16 @@
 			(type default)
 		)
 		(uuid "e393787f-fa24-47a7-a0e8-2b40aa67979c")
+	)
+	(wire
+		(pts
+			(xy 119.38 148.59) (xy 109.22 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e444e4cd-f9aa-46e8-bcba-3ce5582b0020")
 	)
 	(wire
 		(pts
@@ -12262,6 +12865,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 147.32) (xy 77.47 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e85df2fe-4f25-45b0-bc52-90eb2865fcf7")
+	)
+	(wire
+		(pts
 			(xy 119.38 55.88) (xy 127 55.88)
 		)
 		(stroke
@@ -12292,16 +12905,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 81.28) (xy 52.07 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed151344-8817-4713-9c0e-49225339c639")
-	)
-	(wire
-		(pts
 			(xy 127 55.88) (xy 130.81 55.88)
 		)
 		(stroke
@@ -12312,6 +12915,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 49.53) (xy 57.15 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee635e65-38a3-4b78-bc4c-4bab31ab73c0")
+	)
+	(wire
+		(pts
 			(xy 180.34 45.72) (xy 184.15 45.72)
 		)
 		(stroke
@@ -12319,16 +12932,6 @@
 			(type default)
 		)
 		(uuid "ee812614-6fb1-40fd-b376-74ffe9ea0f0b")
-	)
-	(wire
-		(pts
-			(xy 35.56 67.31) (xy 35.56 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef67494d-dcec-430a-b61b-531fa422d1a1")
 	)
 	(wire
 		(pts
@@ -12349,6 +12952,16 @@
 			(type default)
 		)
 		(uuid "f3d83f17-a621-410b-8827-1b5026ef341e")
+	)
+	(wire
+		(pts
+			(xy 107.95 148.59) (xy 107.95 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5ca5c47-8f15-4ea7-8be1-31a9c811a251")
 	)
 	(wire
 		(pts
@@ -12402,6 +13015,26 @@
 	)
 	(wire
 		(pts
+			(xy 107.95 146.05) (xy 119.38 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbf51e46-9de0-49bb-895c-151ee78a8365")
+	)
+	(wire
+		(pts
+			(xy 74.93 144.78) (xy 80.01 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbf5e14d-780b-44b1-b29a-2cba7d3f269d")
+	)
+	(wire
+		(pts
 			(xy 88.9 30.48) (xy 88.9 31.75)
 		)
 		(stroke
@@ -12439,6 +13072,16 @@
 			(justify left bottom)
 		)
 		(uuid "4ec15265-7dc7-4e28-b40d-07cc51f6ca20")
+	)
+	(label "USB_ESP_N"
+		(at 104.14 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "739f46a5-6463-48f1-b19c-0148ada7af00")
 	)
 	(label "SDA"
 		(at 78.74 120.65 0)
@@ -12479,6 +13122,16 @@
 			(justify left bottom)
 		)
 		(uuid "b7fc7cac-6482-4942-b5bd-0f35b349ef8f")
+	)
+	(label "USB_ESP_P"
+		(at 104.14 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e361c04d-d665-4fda-b148-f242d9320211")
 	)
 	(label "SCK"
 		(at 267.97 86.36 0)
@@ -13700,7 +14353,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 24.13 64.77 0)
+		(at 22.86 53.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13711,7 +14364,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ed771da-ccca-4d21-b6f4-7e65f40025c5")
 		(property "Reference" "J1"
-			(at 24.765 59.69 0)
+			(at 23.495 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13721,7 +14374,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 24.765 62.23 0)
+			(at 23.495 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13731,7 +14384,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
-			(at 24.13 64.77 0)
+			(at 22.86 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13742,7 +14395,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 64.77 0)
+			(at 22.86 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13753,7 +14406,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 24.13 64.77 0)
+			(at 22.86 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14481,6 +15134,87 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 69.85 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1cfa31bb-7692-4d96-a3a8-b8184bed1c1f")
+		(property "Reference" "J8"
+			(at 65.278 155.194 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 52.07 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+			(at 69.85 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 69.85 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6f48b08-4482-446d-8509-b3a793ac4fee")
+		)
+		(pin "2"
+			(uuid "2ea1b6ac-0dd4-4cba-9340-b7159e8f242d")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -16479,7 +17213,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 177.8 36.322 90)
+			(at 164.846 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16947,7 +17681,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 57.15 77.47 0)
+		(at 69.85 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16958,7 +17692,7 @@
 		(fields_autoplaced yes)
 		(uuid "497c1bef-68bc-4615-bae0-209011a31a20")
 		(property "Reference" "#PWR028"
-			(at 57.15 83.82 0)
+			(at 69.85 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16969,7 +17703,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 57.15 82.55 0)
+			(at 69.85 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16980,7 +17714,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 77.47 0)
+			(at 69.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16991,7 +17725,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 77.47 0)
+			(at 69.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17002,7 +17736,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 77.47 0)
+			(at 69.85 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17763,6 +18497,273 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_JLCPCB-Resistors:0402,10kΩ")
+		(at 83.82 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5bee3c54-4390-4017-b25a-0cc03b2cbca5")
+		(property "Reference" "R23"
+			(at 80.01 147.574 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 83.82 143.51 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:R_0402"
+			(at 82.042 143.51 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221126_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/°C ±1% 10kΩ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "24372091"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.004USD"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "20"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "10"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Basic Component"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Resistors,Chip Resistor - Surface Mount"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "0402WGF1002TCE"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Resistance" "10kΩ"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Power(Watts)" "62.5mW"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Thick Film Resistors"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Overload Voltage (Max)" "50V"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Operating Temperature Range" "-55°C~+155°C"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "±1%"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temperature Coefficient" "±100ppm/°C"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "bcb30d41-b19e-44cc-a4c1-7380ec67153a")
+		)
+		(pin "1"
+			(uuid "c306453b-2fb7-4d76-a730-38a5e2189f13")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 128.27 30.48 0)
 		(unit 1)
@@ -18258,6 +19259,85 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 77.47 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6fbe98a0-2aa2-40b1-8fe2-8662c750ffa1")
+		(property "Reference" "#PWR064"
+			(at 77.47 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.47 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 77.47 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a1fa744a-b6a1-4786-8222-da7536195545")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -18792,6 +19872,85 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 157.48 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "72b7db05-84e3-4740-9ca1-d5942b3357cd")
+		(property "Reference" "#PWR042"
+			(at 157.48 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 157.48 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 157.48 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "71fa305a-802f-4364-961a-cfc9329e8fc0")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -20096,6 +21255,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 153.67 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a69749e-5fff-4507-a813-3c038056b7a0")
+		(property "Reference" "#PWR041"
+			(at 153.67 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c28d6586-e1e1-4be9-b518-daef109e7d39")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_JLCPCB-Resistors:0402,0Ω")
 		(at 60.96 115.57 90)
 		(unit 1)
@@ -20442,8 +21680,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 198.12 107.95 0)
+		(lib_id "Connector:TestPoint")
+		(at 161.29 82.55 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -20451,10 +21689,19 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7fec5c03-8b6b-435d-b8bc-f157cc5247e0")
-		(property "Reference" "#PWR025"
-			(at 198.12 114.3 0)
+		(uuid "809eebbf-273f-436a-8ac0-054c9ea3806f")
+		(property "Reference" "TP8"
+			(at 161.29 74.93 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 163.83 79.248 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20464,18 +21711,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 198.12 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 198.12 107.95 0)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 166.37 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20486,7 +21723,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 107.95 0)
+			(at 166.37 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20496,8 +21733,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 198.12 107.95 0)
+		(property "Description" "test point"
+			(at 161.29 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20508,20 +21745,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "32d790fa-a485-41a6-b728-d74241a7bf21")
+			(uuid "6677b367-a8a3-43c6-aa1a-37c17f552eb0")
 		)
 		(instances
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
-					(reference "#PWR025")
+					(reference "TP8")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "PCM_JLCPCB-Transistors:PMOS,HL2305")
-		(at 163.83 34.29 0)
+		(lib_id "Connector:TestPoint")
+		(at 153.67 82.55 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -20529,32 +21766,19 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "82727c4f-28a9-4ce8-81d9-b3c4131d0d43")
-		(property "Reference" "Q2"
-			(at 170.18 33.0199 0)
+		(uuid "8327366f-7654-464c-bfcc-014d04209e92")
+		(property "Reference" "TP6"
+			(at 153.67 74.93 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "HL2305"
-			(at 170.18 35.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PCM_JLCPCB:Q_SOT-23"
-			(at 162.052 34.29 90)
+		(property "Value" "TestPoint"
+			(at 156.21 79.248 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20564,8 +21788,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2407121631_hongjiacheng-HL2305_C28646261.pdf"
-			(at 163.83 34.29 0)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 158.75 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20575,8 +21799,8 @@
 				)
 			)
 		)
-		(property "Description" "12V 3.6A 30mΩ@4.5V,2.6A 1.25W 900mV@250uA 1 Piece P-Channel SOT-23 MOSFETs ROHS"
-			(at 163.83 34.29 0)
+		(property "Datasheet" ""
+			(at 158.75 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20586,107 +21810,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C28646261"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Stock" "8811"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.039USD"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Process" "SMT"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum Qty" "10"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Attrition Qty" "4"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Class" "Preferred Component"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Category" "Transistors/Thyristors,MOSFETs"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "hongjiacheng"
-			(at 163.83 34.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part" "HL2305"
-			(at 163.83 34.29 0)
+		(property "Description" "test point"
+			(at 153.67 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20697,224 +21822,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "710f6f52-0854-4c6b-936f-62889deb09ef")
-		)
-		(pin "2"
-			(uuid "7558dad2-eb5c-4e92-b153-acb11061e08c")
-		)
-		(pin "3"
-			(uuid "b333f054-2c24-4d97-82b9-f06fa08d8db8")
+			(uuid "c4832bf2-4165-40d8-a506-b30b0dfdc9d6")
 		)
 		(instances
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_JLCPCB-Transistor-Packages:NMOS, 2 Channel, HJ8205")
-		(at 54.61 64.77 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "83986a31-0c3c-4741-bb15-e1423a27171e")
-		(property "Reference" "Q1"
-			(at 60.96 63.4999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "HJ8205"
-			(at 60.96 66.0399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "PCM_JLCPCB:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
-			(at 64.77 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401111808_hongjiacheng-HJ8205_C20069150.pdf"
-			(at 54.483 67.056 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "20V 4.3A 1.25W 0.3Ω@4.0V,4.3A 1V 1PCSNChannel SOT-23-6L MOSFETs ROHS"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C20069150"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Stock" "10725"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" "0.053USD"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Process" "SMT"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Minimum Qty" "5"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Attrition Qty" "4"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Class" "Preferred Component"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Category" "Triode/MOS Tube/Transistor,MOSFETs"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "hongjiacheng"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part" "HJ8205"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "894d285d-18f1-4865-bbf8-d8fb5d171d14")
-		)
-		(pin "1"
-			(uuid "9d02d093-583b-4ef6-8c84-58d37a58c7e7")
-		)
-		(pin "2"
-			(uuid "b3cd2d97-b587-4af6-a2c0-09909d991631")
-		)
-		(pin "3"
-			(uuid "73b8287f-62b8-4937-9c2a-0b332d15073e")
-		)
-		(pin "5"
-			(uuid "d7686a24-c557-4fa4-90de-78594aff9b68")
-		)
-		(pin "6"
-			(uuid "d50148de-cb6f-4beb-972e-c3e2a019c5f2")
-		)
-		(instances
-			(project "IR coffee thermometer"
-				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
-					(reference "Q1")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -21501,6 +22414,273 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_JLCPCB-Resistors:0402,10kΩ")
+		(at 87.63 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8fbeab95-4fe2-411b-9292-3bc993981f4e")
+		(property "Reference" "R24"
+			(at 83.82 147.574 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10kΩ"
+			(at 87.63 143.51 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:R_0402"
+			(at 85.852 143.51 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221126_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/°C ±1% 10kΩ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "24372091"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.004USD"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "20"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "10"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Basic Component"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Resistors,Chip Resistor - Surface Mount"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "0402WGF1002TCE"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Resistance" "10kΩ"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Power(Watts)" "62.5mW"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "Thick Film Resistors"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Overload Voltage (Max)" "50V"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Operating Temperature Range" "-55°C~+155°C"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "±1%"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temperature Coefficient" "±100ppm/°C"
+			(at 87.63 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7f638297-e9cc-44b0-a778-677115d78f98")
+		)
+		(pin "1"
+			(uuid "85ecf12d-8f9e-424f-9a5f-e4817fecae06")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_JLCPCB-Capacitors:0402,100nF")
 		(at 191.77 127 0)
 		(unit 1)
@@ -21997,6 +23177,87 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 69.85 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "95a90b66-47e7-45e2-aac0-d5102a917dd6")
+		(property "Reference" "J7"
+			(at 65.278 148.844 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 52.07 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm"
+			(at 69.85 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 69.85 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "713cf4bf-8585-4e13-854f-c357401f19eb")
+		)
+		(pin "2"
+			(uuid "fb247dbb-ec2c-4a66-803b-7a18465f56d6")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -23457,6 +24718,85 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 161.29 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b0e64cfb-4431-4102-b7f3-cb76c7cc4db9")
+		(property "Reference" "#PWR045"
+			(at 161.29 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 161.29 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 161.29 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cd66c6ce-aaca-4a64-b9cf-177765dbb7c6")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 149.86 46.99 0)
 		(unit 1)
 		(body_style 1)
@@ -23529,6 +24869,84 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 83.82 139.7 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6393962-bb97-49c9-b2ee-db92b979b85b")
+		(property "Reference" "#PWR046"
+			(at 83.82 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 83.82 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 83.82 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d8b2a997-dad3-457e-9951-8635da1bdd48")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -24901,6 +26319,7 @@
 		(uuid "d0ad2868-bc7f-4855-8fe5-c01441689a81")
 		(property "Reference" "R9"
 			(at 33.02 73.6599 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25529,6 +26948,404 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0_MyLib:NMOS, 2 Channel, HJ8205")
+		(at 55.88 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d517de06-9ff5-4e6a-baa4-cacb0d04eac5")
+		(property "Reference" "Q3"
+			(at 54.61 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HJ8205"
+			(at 54.61 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+			(at 56.896 70.866 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2401111808_hongjiacheng-HJ8205_C20069150.pdf"
+			(at 53.594 69.469 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "20V 4.3A 1.25W 0.3Ω@4.0V,4.3A 1V 1PCSNChannel SOT-23-6L MOSFETs ROHS"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C20069150"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "10725"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.053USD"
+			(at 56.642 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "5"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "4"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Preferred Component"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Triode/MOS Tube/Transistor,MOSFETs"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "hongjiacheng"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "HJ8205"
+			(at 55.88 69.596 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "55dfe788-a735-491c-b68a-179d57cad0c9")
+		)
+		(pin "3"
+			(uuid "ab9ad2f9-5ed9-45a8-aad5-aa142f7c3f60")
+		)
+		(pin "6"
+			(uuid "46ad0f6a-ba41-43ca-9201-31cb702e314b")
+		)
+		(pin "1"
+			(uuid "d222955c-ccec-4182-adde-d573b244d7b7")
+		)
+		(pin "2"
+			(uuid "f8352932-eda0-4bdb-9480-66195613a944")
+		)
+		(pin "5"
+			(uuid "39e8f669-997b-4384-90e5-06a05055d912")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_JLCPCB-Transistors:PMOS,HL2305")
+		(at 163.83 34.29 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d5d63364-5535-4fb1-a207-8d080500b1fd")
+		(property "Reference" "Q2"
+			(at 170.18 33.0199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HL2305"
+			(at 170.18 35.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_JLCPCB:Q_SOT-23"
+			(at 162.052 34.29 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2407121631_hongjiacheng-HL2305_C28646261.pdf"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "12V 3.6A 30mΩ@4.5V,2.6A 1.25W 900mV@250uA 1 Piece P-Channel SOT-23 MOSFETs ROHS"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C28646261"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Stock" "8811"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" "0.039USD"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Process" "SMT"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Minimum Qty" "10"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Attrition Qty" "4"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Class" "Preferred Component"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Category" "Transistors/Thyristors,MOSFETs"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "hongjiacheng"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part" "HL2305"
+			(at 163.83 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4c482871-22e2-4c01-a2c8-754426278ca5")
+		)
+		(pin "2"
+			(uuid "dca88fd9-5141-4a41-a216-93f976806c48")
+		)
+		(pin "3"
+			(uuid "d01b5975-de43-432d-90c5-7cdc09db461f")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -27171,6 +28988,83 @@
 			(project "IR coffee thermometer"
 				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
 					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 157.48 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f399f58e-20e2-4964-bda9-65933de1d353")
+		(property "Reference" "TP7"
+			(at 157.48 74.93 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 160.02 79.248 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 162.56 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 157.48 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "11f5d581-b54d-495b-b2d3-9273b554e946")
+		)
+		(instances
+			(project "IR coffee thermometer"
+				(path "/ed3d3bab-d20d-43f1-a48e-4bf555c47039"
+					(reference "TP7")
 					(unit 1)
 				)
 			)
