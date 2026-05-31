@@ -17494,6 +17494,7 @@
 		)
 		(embedded_fonts no)
 		(model "C:/Users/HarryKreicers/OneDrive - DroneShield/Documents/KiCad/10.0/3dmodels/DM-OLED096-636--3DModel-STEP-56544.STEP"
+			(hide yes)
 			(opacity 0.2000)
 			(offset
 				(xyz 0 0 7.5)
