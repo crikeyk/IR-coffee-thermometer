@@ -5,30 +5,49 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <DNSServer.h>
+#include <Preferences.h>
 
+// ── Pin / display config ─────────────────────────────────────────
 #define SCREEN_WIDTH  128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1
 #define OLED_ADDRESS  0x3C
-#define PIN_SCK  10
-#define PIN_SDA   3
+#define PIN_SCK       10
+#define PIN_SDA        3
 
-#define AP_SSID     "IR-Thermometer"
-#define AP_PASSWORD "12345678"
+// ── WiFi config ──────────────────────────────────────────────────
+#define AP_SSID       "IR-Thermometer"
 
+// ── Quick-boot detection ─────────────────────────────────────────
+// If the device was on for less than QUICKBOOT_WINDOW_MS on the previous
+// boot, we treat this boot as the "second boot" and enable WiFi.
+#define QUICKBOOT_WINDOW_MS  3000   // 3 seconds
+
+// ── OLED graph config ────────────────────────────────────────────
+// Graph occupies the bottom portion of the display.
+// Top area: current temp reading (large text).
+#define GRAPH_TOP     36            // y pixel where graph starts
+#define GRAPH_HEIGHT  (SCREEN_HEIGHT - GRAPH_TOP)   // 28 px
+#define GRAPH_WIDTH   SCREEN_WIDTH                  // 128 samples
+#define GRAPH_AUTOSCALE_MARGIN_C  1.0   // pad min/max by this many °C
+
+// ── Objects ──────────────────────────────────────────────────────
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 Adafruit_MLX90614 mlx;
 WebServer server(80);
 DNSServer dnsServer;
+Preferences prefs;
 
+// ── Shared state ─────────────────────────────────────────────────
 struct TempData {
   double ambient;
   double object;
   bool   valid;
 };
-
 TempData tempData = { 0, 0, false };
 SemaphoreHandle_t tempMutex;
+
+bool wifiEnabled = false;   // set in setup(), read-only after that
 
 // ── Web page ─────────────────────────────────────────────────────
 const char INDEX_HTML[] PROGMEM = R"rawliteral(
@@ -39,100 +58,306 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IR Thermometer</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d0f;
+      --surface:   #18181c;
+      --border:    #2a2a32;
+      --accent:    #f97316;
+      --accent-lo: rgba(249,115,22,0.12);
+      --cool:      #38bdf8;
+      --text:      #f1f0ee;
+      --muted:     #6b6b78;
+      --label:     #9a9aa8;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
-      padding: 24px;
-    }
-    h1 { font-size: 1.2rem; color: #888; margin-bottom: 32px; letter-spacing: 0.1em; text-transform: uppercase; }
-    .cards { display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 340px; }
-    .card {
-      background: #1e1e1e;
-      border-radius: 16px;
-      padding: 24px;
+      padding: 24px 16px 40px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-    }
-    .card.highlight { border: 1px solid #ff6b35; }
-    .label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; }
-    .value { font-size: 3.5rem; font-weight: 200; letter-spacing: -0.02em; }
-    .unit  { font-size: 1.2rem; color: #888; }
-    .delta-card {
-      background: #1a1a2e;
-      border-radius: 16px;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      width: 100%;
-      max-width: 340px;
+      gap: 16px;
     }
-    .delta-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; }
-    .delta-value { font-size: 1.8rem; font-weight: 300; }
-    .positive { color: #ff6b35; }
-    .negative { color: #4fc3f7; }
-    .status { margin-top: 24px; font-size: 0.7rem; color: #444; }
-    .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #4caf50; margin-right: 6px; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    header {
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+    /* ── Big readings row ── */
+    .readings {
+      width: 100%;
+      max-width: 560px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px 14px;
+    }
+    .card.primary {
+      border-color: var(--accent);
+      background: linear-gradient(145deg, #1c1510 0%, var(--surface) 100%);
+    }
+    .card-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--label);
+      margin-bottom: 6px;
+    }
+    .card-value {
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .card.primary .card-value { color: var(--accent); }
+    .card-unit {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-left: 2px;
+    }
+    .delta-row {
+      width: 100%;
+      max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .delta-row .card-label { margin: 0; }
+    .delta-val {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+    .pos { color: var(--accent); }
+    .neg { color: var(--cool);  }
+
+    /* ── Chart ── */
+    .chart-wrap {
+      width: 100%;
+      max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px 12px;
+    }
+    .chart-title {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    canvas {
+      width: 100%;
+      height: 180px;
+      display: block;
+    }
+
+    .footer {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
   </style>
 </head>
 <body>
-  <h1>IR Thermometer</h1>
-  <div class="cards">
-    <div class="card">
-      <div class="label">Ambient</div>
-      <div><span class="value" id="amb">--.-</span><span class="unit"> °C</span></div>
-    </div>
-    <div class="card highlight">
-      <div class="label">Object</div>
-      <div><span class="value" id="obj">--.-</span><span class="unit"> °C</span></div>
-    </div>
-  </div>
-  <div class="delta-card" style="margin-top:16px">
-    <div class="delta-label">Delta</div>
-    <div class="delta-value" id="delta">--.-<span style="font-size:1rem;color:#888"> °C</span></div>
-  </div>
-  <div class="status"><span class="dot"></span><span id="status">Connecting...</span></div>
-  <script>
-    const amb    = document.getElementById('amb');
-    const obj    = document.getElementById('obj');
-    const delta  = document.getElementById('delta');
-    const status = document.getElementById('status');
 
-    // Fall back to polling since SSE and synchronous WebServer
-    // don't mix well — phone gets a fresh read every second
-    function poll() {
-      fetch('/data')
-        .then(r => r.json())
-        .then(d => {
-          amb.textContent = d.ambient.toFixed(2);
-          obj.textContent = d.object.toFixed(2);
-          const diff = d.object - d.ambient;
-          const sign = diff >= 0 ? '+' : '';
-          delta.innerHTML = `<span class="${diff>=0?'positive':'negative'}">${sign}${diff.toFixed(2)}</span><span style="font-size:1rem;color:#888"> °C</span>`;
-          status.textContent = `Last update: ${new Date().toLocaleTimeString()}`;
-        })
-        .catch(() => { status.textContent = 'Connection lost — retrying...'; });
+  <header>
+    <div class="live-dot"></div>
+    <h1>IR Thermometer</h1>
+  </header>
+
+  <div class="readings">
+    <div class="card primary">
+      <div class="card-label">Object</div>
+      <div class="card-value" id="obj">--<span class="card-unit">°C</span></div>
+    </div>
+    <div class="card">
+      <div class="card-label">Ambient</div>
+      <div class="card-value" id="amb">--<span class="card-unit">°C</span></div>
+    </div>
+  </div>
+
+  <div class="delta-row">
+    <div class="card-label">Delta</div>
+    <div class="delta-val" id="delta">-- °C</div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">History · last 60 s</div>
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div class="footer" id="status">connecting…</div>
+
+<script>
+  // ── History buffers (60 points, one per second) ───────────────
+  const MAX_PTS = 60;
+  const objHist = [];
+  const ambHist = [];
+
+  // ── Canvas chart ──────────────────────────────────────────────
+  const canvas = document.getElementById('chart');
+  const ctx    = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width  = canvas.offsetWidth  * devicePixelRatio;
+    canvas.height = canvas.offsetHeight * devicePixelRatio;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function drawChart() {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    if (objHist.length < 2) return;
+
+    const combined = [...objHist, ...ambHist];
+    let lo = Math.min(...combined);
+    let hi = Math.max(...combined);
+    if (hi - lo < 2) { lo -= 1; hi += 1; }   // minimum span
+    const pad = (hi - lo) * 0.1;
+    lo -= pad; hi += pad;
+
+    const scaleY = v => H - ((v - lo) / (hi - lo)) * H;
+    const scaleX = i => (i / (MAX_PTS - 1)) * W;
+
+    // Grid lines (3)
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 1 * devicePixelRatio;
+    [0.25, 0.5, 0.75].forEach(f => {
+      const y = H * f;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+
+      // y-axis label
+      const temp = lo + (hi - lo) * (1 - f);
+      ctx.fillStyle = 'rgba(155,155,168,0.7)';
+      ctx.font = `${10 * devicePixelRatio}px monospace`;
+      ctx.fillText(temp.toFixed(1), 4 * devicePixelRatio, y - 3 * devicePixelRatio);
+    });
+
+    function plotLine(data, color, fillColor) {
+      if (data.length < 2) return;
+      const pts = data.map((v, i) => ({
+        x: scaleX(i + (MAX_PTS - data.length)),
+        y: scaleY(v)
+      }));
+
+      // Fill
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, H);
+      pts.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.lineTo(pts[pts.length - 1].x, H);
+      ctx.closePath();
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+
+      // Line
+      ctx.beginPath();
+      pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2 * devicePixelRatio;
+      ctx.lineJoin = 'round';
+      ctx.stroke();
     }
 
-    poll();
-    setInterval(poll, 1000);
-  </script>
+    // Ambient behind, object in front
+    plotLine(ambHist, '#38bdf8', 'rgba(56,189,248,0.07)');
+    plotLine(objHist, '#f97316', 'rgba(249,115,22,0.12)');
+
+    // Legend
+    const lx = W - 80 * devicePixelRatio;
+    const ly = 10 * devicePixelRatio;
+    const fs = 9 * devicePixelRatio;
+    ctx.font = `${fs}px monospace`;
+    [[`#f97316`, 'Object'], [`#38bdf8`, 'Ambient']].forEach(([c, label], i) => {
+      const y = ly + i * 14 * devicePixelRatio;
+      ctx.fillStyle = c;
+      ctx.fillRect(lx, y, 10 * devicePixelRatio, 2 * devicePixelRatio);
+      ctx.fillStyle = 'rgba(155,155,168,0.9)';
+      ctx.fillText(label, lx + 14 * devicePixelRatio, y + fs * 0.8);
+    });
+  }
+
+  // ── DOM refs ──────────────────────────────────────────────────
+  const elObj    = document.getElementById('obj');
+  const elAmb    = document.getElementById('amb');
+  const elDelta  = document.getElementById('delta');
+  const elStatus = document.getElementById('status');
+
+  function poll() {
+    fetch('/data')
+      .then(r => r.json())
+      .then(d => {
+        elObj.innerHTML  = `${d.object.toFixed(2)}<span class="card-unit">°C</span>`;
+        elAmb.innerHTML  = `${d.ambient.toFixed(2)}<span class="card-unit">°C</span>`;
+
+        const diff = d.object - d.ambient;
+        const sign = diff >= 0 ? '+' : '';
+        const cls  = diff >= 0 ? 'pos' : 'neg';
+        elDelta.innerHTML = `<span class="${cls}">${sign}${diff.toFixed(2)} °C</span>`;
+
+        objHist.push(d.object);
+        ambHist.push(d.ambient);
+        if (objHist.length > MAX_PTS) objHist.shift();
+        if (ambHist.length > MAX_PTS) ambHist.shift();
+
+        drawChart();
+        elStatus.textContent = `updated ${new Date().toLocaleTimeString()}`;
+      })
+      .catch(() => { elStatus.textContent = 'connection lost — retrying…'; });
+  }
+
+  poll();
+  setInterval(poll, 1000);
+</script>
 </body>
 </html>
 )rawliteral";
 
 // ── Handlers ─────────────────────────────────────────────────────
 void handleRoot() {
-  server.send(200, "text/html", INDEX_HTML);
+  server.send_P(200, "text/html", INDEX_HTML);
 }
 
 void handleData() {
@@ -141,7 +366,7 @@ void handleData() {
     snap = tempData;
     xSemaphoreGive(tempMutex);
   }
-  char buf[64];
+  char buf[72];
   snprintf(buf, sizeof(buf),
            "{\"ambient\":%.2f,\"object\":%.2f,\"valid\":%s}",
            snap.ambient, snap.object, snap.valid ? "true" : "false");
@@ -149,9 +374,71 @@ void handleData() {
 }
 
 void handleCaptive() {
-  // Redirect all captive portal probes to root
   server.sendHeader("Location", "http://192.168.4.1/", true);
   server.send(302, "text/plain", "");
+}
+
+// ── OLED rolling graph state ─────────────────────────────────────
+static float  graphBuf[GRAPH_WIDTH];   // circular buffer of object temps
+static int    graphHead  = 0;          // next write index
+static int    graphCount = 0;          // how many valid samples
+static float  graphMin   = 1e9f;
+static float  graphMax   = -1e9f;
+
+void graphPush(float val) {
+  graphBuf[graphHead] = val;
+  graphHead = (graphHead + 1) % GRAPH_WIDTH;
+  if (graphCount < GRAPH_WIDTH) graphCount++;
+
+  // Recompute min/max over entire buffer
+  graphMin = 1e9f; graphMax = -1e9f;
+  int start = (graphHead - graphCount + GRAPH_WIDTH) % GRAPH_WIDTH;
+  for (int i = 0; i < graphCount; i++) {
+    float v = graphBuf[(start + i) % GRAPH_WIDTH];
+    if (v < graphMin) graphMin = v;
+    if (v > graphMax) graphMax = v;
+  }
+}
+
+// Draw the rolling graph into the lower portion of the display buffer.
+// Call AFTER display.clearDisplay() and before display.display().
+void drawOledGraph() {
+  if (graphCount < 2) return;
+
+  float lo = graphMin - GRAPH_AUTOSCALE_MARGIN_C;
+  float hi = graphMax + GRAPH_AUTOSCALE_MARGIN_C;
+  if (hi - lo < 1.0f) { lo -= 0.5f; hi += 0.5f; }
+
+  int start = (graphHead - graphCount + GRAPH_WIDTH) % GRAPH_WIDTH;
+
+  // Map count samples across SCREEN_WIDTH pixels
+  int prevX = -1, prevY = -1;
+  for (int px = 0; px < SCREEN_WIDTH; px++) {
+    // which sample index corresponds to pixel px?
+    int si = (int)((float)px / (SCREEN_WIDTH - 1) * (graphCount - 1) + 0.5f);
+    float v = graphBuf[(start + si) % GRAPH_WIDTH];
+    int py = GRAPH_TOP + GRAPH_HEIGHT - 1
+             - (int)(((v - lo) / (hi - lo)) * (GRAPH_HEIGHT - 1));
+    py = constrain(py, GRAPH_TOP, SCREEN_HEIGHT - 1);
+
+    if (prevX >= 0) {
+      display.drawLine(prevX, prevY, px, py, SSD1306_WHITE);
+    }
+    prevX = px; prevY = py;
+  }
+
+  // Y-axis labels (min / max) at right edge, tiny font
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  // max label top-right
+  char buf[10];
+  snprintf(buf, sizeof(buf), "%.1f", hi - GRAPH_AUTOSCALE_MARGIN_C);
+  display.setCursor(SCREEN_WIDTH - 6 * strlen(buf), GRAPH_TOP);
+  display.print(buf);
+  // min label bottom-right
+  snprintf(buf, sizeof(buf), "%.1f", lo + GRAPH_AUTOSCALE_MARGIN_C);
+  display.setCursor(SCREEN_WIDTH - 6 * strlen(buf), SCREEN_HEIGHT - 8);
+  display.print(buf);
 }
 
 // ── Task 1: Sensor ───────────────────────────────────────────────
@@ -168,8 +455,9 @@ void taskSensor(void* pvParameters) {
         tempData.valid   = true;
         xSemaphoreGive(tempMutex);
       }
+      graphPush((float)obj);   // feed rolling graph (no mutex needed — only this task writes)
     }
-    vTaskDelay(pdMS_TO_TICKS(100));
+    vTaskDelay(pdMS_TO_TICKS(200));
   }
 }
 
@@ -189,41 +477,42 @@ void taskDisplay(void* pvParameters) {
       display.setTextColor(SSD1306_WHITE);
       display.setCursor(20, 28);
       display.println("Sensor error!");
-    } else {
-      display.setTextSize(1);
-      display.setTextColor(SSD1306_WHITE);
-      display.setCursor(25, 0);
-      display.println("IR Thermometer");
-      display.drawFastHLine(0, 10, SCREEN_WIDTH, SSD1306_WHITE);
-
-      display.setCursor(0, 13);
-      display.print("AMB:");
-      display.setCursor(28, 13);
-      display.printf("%.2f C", snap.ambient);
-
-      display.drawFastHLine(0, 23, SCREEN_WIDTH, SSD1306_WHITE);
-
-      display.setCursor(0, 26);
-      display.print("OBJ:");
-      display.setCursor(28, 26);
-      display.printf("%.2f C", snap.object);
-
-      display.drawFastHLine(0, 36, SCREEN_WIDTH, SSD1306_WHITE);
-
-      double delta = snap.object - snap.ambient;
-      display.setCursor(0, 39);
-      display.print("DELTA:");
-      display.setCursor(40, 39);
-      display.printf("%+.2f C", delta);
-
-      display.drawFastHLine(0, 49, SCREEN_WIDTH, SSD1306_WHITE);
-
-      display.setCursor(0, 52);
-      display.printf("up:%lus heap:%lu", millis() / 1000, esp_get_free_heap_size());
+      display.display();
+      vTaskDelay(pdMS_TO_TICKS(200));
+      continue;
     }
 
+    // ── Top section: big object temp ─────────────────────────────
+    // e.g. "36.75" in size-2 font (12px tall), centred vertically in top area
+    display.setTextColor(SSD1306_WHITE);
+
+    // Label "OBJ" tiny
+    display.setTextSize(1);
+    display.setCursor(0, 0);
+    display.print("OBJ");
+
+    // Value in size-2 font
+    char valBuf[12];
+    snprintf(valBuf, sizeof(valBuf), "%.2f", snap.object);
+    display.setTextSize(2);
+    // size-2 char is 12px tall; centre it in the GRAPH_TOP area (36px)
+    int16_t ty = (GRAPH_TOP - 16) / 2;
+    display.setCursor(22, ty);
+    display.print(valBuf);
+
+    // "C" unit small
+    display.setTextSize(1);
+    display.setCursor(22 + strlen(valBuf) * 12, ty + 4);
+    display.print("C");
+
+    // Divider
+    display.drawFastHLine(0, GRAPH_TOP - 2, SCREEN_WIDTH, SSD1306_WHITE);
+
+    // ── Lower section: rolling graph ─────────────────────────────
+    drawOledGraph();
+
     display.display();
-    vTaskDelay(pdMS_TO_TICKS(100));
+    vTaskDelay(pdMS_TO_TICKS(200));
   }
 }
 
@@ -244,18 +533,44 @@ void taskWatchdog(void* pvParameters) {
       snap = tempData;
       xSemaphoreGive(tempMutex);
     }
-    Serial.printf("heap: %lu  amb: %.2f  obj: %.2f  valid: %d\n",
-                  esp_get_free_heap_size(), snap.ambient, snap.object, snap.valid);
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    Serial.printf("heap: %lu  amb: %.2f  obj: %.2f  valid: %d  wifi: %d\n",
+                  esp_get_free_heap_size(),
+                  snap.ambient, snap.object, snap.valid, wifiEnabled);
+    vTaskDelay(pdMS_TO_TICKS(5000));
   }
+}
+
+// ── Quick-boot detection via NVS ─────────────────────────────────
+// We write a flag at boot and clear it after QUICKBOOT_WINDOW_MS.
+// If the flag is already set when we boot, the previous boot was short → enable WiFi.
+bool detectQuickBoot() {
+  prefs.begin("boot", false);
+  bool flagSet = prefs.getBool("qb", false);
+  // Immediately (re-)set the flag for this boot
+  prefs.putBool("qb", true);
+  prefs.end();
+  return flagSet;   // true = previous boot was shorter than QUICKBOOT_WINDOW_MS
+}
+
+void clearQuickBootFlag() {
+  prefs.begin("boot", false);
+  prefs.putBool("qb", false);
+  prefs.end();
 }
 
 // ── Setup ────────────────────────────────────────────────────────
 void setup() {
   Serial.begin(115200);
-  delay(500);
+  delay(200);
   Serial.println("\nESP32-C3 IR Thermometer boot");
 
+  // ── Quick-boot detection ──────────────────────────────────────
+  wifiEnabled = detectQuickBoot();
+  Serial.printf("Quick-boot flag was %s → WiFi %s\n",
+                wifiEnabled ? "SET" : "clear",
+                wifiEnabled ? "ENABLED" : "disabled");
+
+  // ── Hardware init ─────────────────────────────────────────────
   Wire.begin(PIN_SDA, PIN_SCK);
   Wire.setClock(400000);
 
@@ -277,67 +592,73 @@ void setup() {
   }
   Serial.println("MLX90614 OK");
 
-  // First read
+  // First sensor read
   delay(200);
   tempData.ambient = mlx.readAmbientTempC();
   tempData.object  = mlx.readObjectTempC();
   tempData.valid   = (tempData.ambient > -40 && tempData.ambient < 125 &&
                       tempData.object  > -70 && tempData.object  < 380);
-  Serial.printf("First read: amb=%.2f obj=%.2f valid=%d\n",
-                tempData.ambient, tempData.object, tempData.valid);
 
-  // Start AP
-  WiFi.softAP(AP_SSID, AP_PASSWORD);
-  IPAddress ip = WiFi.softAPIP();
-  Serial.printf("AP: %s  IP: %s\n", AP_SSID, ip.toString().c_str());
+  // ── WiFi + web server (only if quick-boot detected) ───────────
+  if (wifiEnabled) {
+    WiFi.softAP(AP_SSID);   // no password — open network
+    IPAddress ip = WiFi.softAPIP();
+    Serial.printf("AP: %s  IP: %s\n", AP_SSID, ip.toString().c_str());
 
-  // DNS wildcard — all queries return our IP
-  dnsServer.start(53, "*", ip);
+    dnsServer.start(53, "*", ip);
 
-  // Routes — register all the URLs iOS/Android use for connectivity checks
-  server.on("/", handleRoot);
-  server.on("/data", handleData);
+    server.on("/",                           handleRoot);
+    server.on("/data",                       handleData);
+    server.on("/hotspot-detect.html",        handleCaptive);
+    server.on("/library/test/success.html",  handleCaptive);
+    server.on("/generate_204",               handleCaptive);
+    server.on("/gen_204",                    handleCaptive);
+    server.on("/connecttest.txt",            handleCaptive);
+    server.on("/redirect",                   handleCaptive);
+    server.on("/success.txt",               handleCaptive);
+    server.on("/ncsi.txt",                   handleCaptive);
+    server.onNotFound(handleCaptive);
+    server.begin();
+    Serial.println("Web server started");
 
-  // Apple captive portal probes
-  server.on("/hotspot-detect.html",        handleCaptive);
-  server.on("/library/test/success.html",  handleCaptive);
+    // Show WiFi info on OLED
+    display.clearDisplay();
+    display.setTextSize(1);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.println("WiFi enabled!");
+    display.println("");
+    display.println(AP_SSID);
+    display.println("(no password)");
+    display.println("");
+    display.println(ip.toString());
+    display.display();
+    delay(4000);
+  } else {
+    // Make sure WiFi radio is fully off to save power
+    WiFi.mode(WIFI_OFF);
+    Serial.println("WiFi off");
+  }
 
-  // Android/Google captive portal probes
-  server.on("/generate_204",               handleCaptive);
-  server.on("/gen_204",                    handleCaptive);
-  server.on("/connecttest.txt",            handleCaptive);
-  server.on("/redirect",                   handleCaptive);
-  server.on("/success.txt",                handleCaptive);
-  server.on("/ncsi.txt",                   handleCaptive);  // Windows
-
-  // Catch-all for anything else
-  server.onNotFound(handleCaptive);
-
-  server.begin();
-  Serial.println("Server started");
-
-  // Show info on OLED
-  display.clearDisplay();
-  display.setTextSize(1);
-  display.setTextColor(SSD1306_WHITE);
-  display.setCursor(0, 0);
-  display.println("WiFi Hotspot:");
-  display.println(AP_SSID);
-  display.println(AP_PASSWORD);
-  display.println("");
-  display.println("Browse to:");
-  display.println(ip.toString());
-  display.display();
-  delay(4000);
-
+  // ── Mutex + tasks ─────────────────────────────────────────────
   tempMutex = xSemaphoreCreateMutex();
 
-  xTaskCreate(taskSensor,    "Sensor",    4096, NULL, 2, NULL);
-  xTaskCreate(taskDisplay,   "Display",   8192, NULL, 1, NULL);
-  xTaskCreate(taskWebServer, "WebServer", 4096, NULL, 1, NULL);
-  xTaskCreate(taskWatchdog,  "Watchdog",  4096, NULL, 1, NULL);
+  xTaskCreate(taskSensor,  "Sensor",  4096, NULL, 2, NULL);
+  xTaskCreate(taskDisplay, "Display", 8192, NULL, 1, NULL);
+  xTaskCreate(taskWatchdog,"Watchdog",4096, NULL, 1, NULL);
 
-  Serial.println("Tasks started");
+  if (wifiEnabled) {
+    xTaskCreate(taskWebServer, "WebServer", 4096, NULL, 1, NULL);
+  }
+
+  // ── Clear the quick-boot flag after the safe window ───────────
+  // Anything still running after QUICKBOOT_WINDOW_MS is a "normal" boot.
+  // We do this in setup() on the main task — it's still within the Arduino
+  // task, which persists. A small blocking delay here is fine because the
+  // FreeRTOS tasks above are already running on their own stacks.
+  delay(QUICKBOOT_WINDOW_MS);
+  clearQuickBootFlag();
+  Serial.println("Quick-boot flag cleared (normal boot confirmed)");
 }
 
 void loop() {
