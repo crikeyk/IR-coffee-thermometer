@@ -21,7 +21,7 @@
 // ── Quick-boot detection ─────────────────────────────────────────
 // If the device was on for less than QUICKBOOT_WINDOW_MS on the previous
 // boot, we treat this boot as the "second boot" and enable WiFi.
-#define QUICKBOOT_WINDOW_MS  3000   // 3 seconds
+#define QUICKBOOT_WINDOW_MS  1000   // 1 seconds
 
 // ── OLED graph config ────────────────────────────────────────────
 // Graph occupies the bottom portion of the display.
@@ -601,6 +601,7 @@ void setup() {
 
   // ── WiFi + web server (only if quick-boot detected) ───────────
   if (wifiEnabled) {
+    clearQuickBootFlag();
     WiFi.softAP(AP_SSID);   // no password — open network
     IPAddress ip = WiFi.softAPIP();
     Serial.printf("AP: %s  IP: %s\n", AP_SSID, ip.toString().c_str());
@@ -626,14 +627,15 @@ void setup() {
     display.setTextSize(1);
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 0);
-    display.println("WiFi enabled!");
+    display.println("--- WiFi Enabled ---");
     display.println("");
+    display.print("SSID: ");
     display.println(AP_SSID);
-    display.println("(no password)");
+    // display.println("(no password)");
     display.println("");
-    display.println(ip.toString());
+    // display.println(ip.toString());
     display.display();
-    delay(4000);
+    delay(3000);
   } else {
     // Make sure WiFi radio is fully off to save power
     WiFi.mode(WIFI_OFF);
